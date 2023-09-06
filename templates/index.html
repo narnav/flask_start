@@ -5,19 +5,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body >
-    <!-- <div class="row row-cols-1 row-cols-md-5 g-4"> -->
+    <h1>Super products</h1>
     {% for prod in prods  %}
-    <!-- <div class="col">
-        <div class="card">
-          <img src="https://picsum.photos/10{{ loop.index }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{prod}}</h5>
-            <p class="card-text">{{ loop.index }} :<a class="btn btn-primary" href="{{ url_for('index', selected=loop.index -1)}}">BUY </a></p>
-          </div>
-        </div>
-      </div> -->
-      {{prod}}
+      
+      <a class="btn btn-primary" href="{{ url_for('index', selected=loop.index -1)}}">BUY {{prod}} </a>
+      <br>
     {% endfor %}
-<!-- </div> -->
+<h1>My Cart</h1>
+
+    {% for prod in cart  %}
+    {{prod}}
+    <br>
+  {% endfor %}
 </body>
 </html>
